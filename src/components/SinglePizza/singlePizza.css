@@ -1,12 +1,3 @@
-.container {
-  width: 580px;
-  gap: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .pizza {
   width: 277.6px;
   height: 244.7px;
