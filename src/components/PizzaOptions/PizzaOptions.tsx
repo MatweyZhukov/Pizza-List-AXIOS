@@ -1,5 +1,5 @@
 //Types
-import { IPizzaOptions } from "../../interfaces/types";
+import { IPizzaOptions } from "../../types/types";
 
 //Global
 import { v4 as uuid } from "uuid";
@@ -28,7 +28,7 @@ function PizzaOptions({ pizzaImgOption, setPizzaImgOption }: IPizzaOptions) {
       {pizzaOptions.map((img) => {
         const id = uuid();
 
-        return <PizzaOptionSingle img={img} id={id} />;
+        return <PizzaOptionSingle img={img} key={id} />;
       })}
     </select>
   );

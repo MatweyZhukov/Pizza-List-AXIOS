@@ -1,12 +1,8 @@
 //Types
-import { IPizzaOptionSingle } from "../../interfaces/types";
+import { IPizzaOptionSingle } from "../../types/types";
 
-function PizzaOptionSingle({ id, img }: IPizzaOptionSingle) {
-  return (
-    <option key={id} value={img}>
-      {img}
-    </option>
-  );
+function PizzaOptionSingle({ img }: IPizzaOptionSingle) {
+  return <option value={img}>{img}</option>;
 }
 
 export default PizzaOptionSingle;

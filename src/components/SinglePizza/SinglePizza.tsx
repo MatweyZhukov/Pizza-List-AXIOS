@@ -2,7 +2,7 @@
 import { AiFillDelete } from "react-icons/ai";
 
 //Types
-import { ISinglePizza } from "../../interfaces/types";
+import { ISinglePizza } from "../../types/types";
 
 //Styles
 import "./singlePizza.css";

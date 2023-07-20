@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 //Types
-import { IAddPizzaForm } from "../../interfaces/types";
+import { IAddPizzaForm } from "../../types/types";
 
 //Components
 import PizzaOptions from "../PizzaOptions/PizzaOptions";

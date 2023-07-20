@@ -2,7 +2,7 @@
 import SinglePizza from "../SinglePizza/SinglePizza";
 
 //Types
-import { IDisplayPizzas } from "../../interfaces/types";
+import { IDisplayPizzas } from "../../types/types";
 
 //Styles
 import "./displayPizzas.css";
