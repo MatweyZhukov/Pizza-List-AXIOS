@@ -1,0 +1,34 @@
+.edit-form {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.25s all;
+}
+
+.hidden {
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.opened {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+.edit-form input {
+    color: #757575;
+    width: 100%;
+    height: 66px;
+}
+
+.edit-form button {
+    height: 50px;
+}
+
+.edit-form select {
+    height: 60px;
+}

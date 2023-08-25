@@ -7,12 +7,21 @@ import { IDisplayPizzas } from "../../types/types";
 //Styles
 import "./displayPizzas.css";
 
-function DisplayPizzas({ pizzasList, deletePizza }: IDisplayPizzas) {
+function DisplayPizzas({
+  pizzasList,
+  deletePizza,
+  updatePizza,
+}: IDisplayPizzas) {
   return (
     <div className="container">
       {pizzasList.map((pizza) => {
         return (
-          <SinglePizza key={pizza.id} pizza={pizza} deletePizza={deletePizza} />
+          <SinglePizza
+            key={pizza.id}
+            pizza={pizza}
+            deletePizza={deletePizza}
+            updatePizza={updatePizza}
+          />
         );
       })}
     </div>

@@ -15,23 +15,32 @@ import "./App.css";
 function App() {
   const [pizzasList, setPizzasList] = useState<IPizzaItem[]>([]);
 
-  async function fetchPizzasList(url: string) {
+  useEffect(() => {
+    fetchPizzasList();
+  }, []);
+
+  async function fetchPizzasList() {
     await axios
-      .get<IPizzaItem[]>(url)
+      .get<IPizzaItem[]>("http://localhost:3001/pizzas")
       .then((res) => setPizzasList(res.data))
       .catch((e) => console.log(e));
   }
-
-  useEffect(() => {
-    fetchPizzasList("http://localhost:3001/pizzas");
-
-    //eslint-disable-next-line
-  }, []);
 
   async function addPizza(newPizza: IPizzaItem) {
     await axios
       .post("http://localhost:3001/pizzas", newPizza)
       .then((res) => setPizzasList([...pizzasList, res.data]))
+      .catch((e) => console.log(e));
+  }
+
+  async function updatePizza(id: IPizzaItem["id"], newPizza: IPizzaItem) {
+    await axios
+      .put(`http://localhost:3001/pizzas/${id}`, newPizza)
+      .then(() => {
+        setPizzasList(
+          pizzasList.map((item) => (item.id === newPizza.id ? newPizza : item))
+        );
+      })
       .catch((e) => console.log(e));
   }
 
@@ -48,7 +57,11 @@ function App() {
         <span className="heading">Наша пиццерия</span>
         <AddPizzaForm addPizza={addPizza} />
         {pizzasList.length !== 0 ? (
-          <DisplayPizzas pizzasList={pizzasList} deletePizza={deletePizza} />
+          <DisplayPizzas
+            pizzasList={pizzasList}
+            deletePizza={deletePizza}
+            updatePizza={updatePizza}
+          />
         ) : (
           <h1>Ваш список пуст</h1>
         )}
