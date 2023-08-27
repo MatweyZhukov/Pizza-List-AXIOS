@@ -31,7 +31,7 @@ function EditPizzaForm({
       editedPizzaImgOption &&
       editedPizzaImgOption !== "Выберите картинку..."
     ) {
-      updatePizza(data.id, {
+      updatePizza({
         ...data,
         title: editedPizzaTitle,
         price: +editedPizzaPrice,

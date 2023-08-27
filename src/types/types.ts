@@ -2,7 +2,8 @@
 import { Dispatch, SetStateAction } from "react";
 
 type DeletePizzaFunc = (id: IPizzaItem["id"]) => void;
-type UpdatePizzaFunc = (id: IPizzaItem["id"], newPizza: IPizzaItem) => void;
+type UpdatePizzaFunc = (newPizza: IPizzaItem) => void;
+type AddPizzaFunc = UpdatePizzaFunc;
 
 export type RequestMethods = "GET" | "POST" | "DELETE";
 
@@ -14,7 +15,7 @@ export interface IPizzaItem {
 }
 
 export interface IAddPizzaForm {
-  addPizza: (newPizza: IPizzaItem) => void;
+  addPizza: AddPizzaFunc;
 }
 
 export interface IDisplayPizzas {

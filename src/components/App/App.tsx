@@ -33,9 +33,9 @@ function App() {
       .catch((e) => console.log(e));
   }
 
-  async function updatePizza(id: IPizzaItem["id"], newPizza: IPizzaItem) {
+  async function updatePizza(newPizza: IPizzaItem) {
     await axios
-      .put(`http://localhost:3001/pizzas/${id}`, newPizza)
+      .put(`http://localhost:3001/pizzas/${newPizza.id}`, newPizza)
       .then(() => {
         setPizzasList(
           pizzasList.map((item) => (item.id === newPizza.id ? newPizza : item))
